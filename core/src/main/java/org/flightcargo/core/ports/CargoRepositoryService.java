@@ -7,12 +7,12 @@ import java.util.Collection;
 
 public interface CargoRepositoryService {
 
-    Collection<Cargo> getCargoByFlight(int flightId);
+    Collection<Cargo> getCargoByFlight(Long flightId);
 
     void addCargo(Cargo cargo);
 
     void removeCargo(Cargo cargo);
 
-    Baggage updateCargo(Cargo cargo);
+    Cargo updateCargo(Cargo cargo);
 
 }

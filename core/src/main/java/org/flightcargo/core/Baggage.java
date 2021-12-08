@@ -25,4 +25,6 @@ public class Baggage extends SelfValidating<Baggage> implements Serializable {
 
     @NotEmpty
     private int pieces;
+
+    private Flight flight;
 }

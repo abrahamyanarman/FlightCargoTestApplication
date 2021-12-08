@@ -5,21 +5,19 @@ import org.flightcargo.core.Flight;
 import org.flightcargo.core.exception.FlightNotFoundException;
 import org.flightcargo.core.ports.FlightRepositoryService;
 
-import java.util.Date;
+import java.util.Collection;
 
 @AllArgsConstructor
-public class GetFlightByFlightNumberAndDateUseCaseImpl implements GetFlightByFlightNumberAndDateUseCase {
+public class GetAllFlightsUseCaseImpl implements GetAllFlightsUseCase {
 
     private final FlightRepositoryService flightRepositoryService;
 
     @Override
-    public Flight execute(int flightNumber, Date date) throws FlightNotFoundException {
-        Flight flight = flightRepositoryService.getFlightByFlightNumberAndDate(flightNumber, date);
-
-        if (flight == null) {
+    public Collection<Flight> execute() throws FlightNotFoundException {
+        Collection<Flight> flights = flightRepositoryService.getAllFlights();
+        if (flights.isEmpty()) {
             throw new FlightNotFoundException();
         }
-
-        return flight;
+        return flights;
     }
 }

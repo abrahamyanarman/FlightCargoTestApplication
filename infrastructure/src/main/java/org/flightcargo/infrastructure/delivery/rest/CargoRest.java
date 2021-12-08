@@ -1,8 +1,8 @@
-package org.flightcargo.core;
+package org.flightcargo.infrastructure.delivery.rest;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
-import org.flightcargo.core.shared.SelfValidating;
+import lombok.NoArgsConstructor;
 
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
@@ -11,7 +11,10 @@ import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
-public class Cargo extends SelfValidating<Cargo> implements Serializable {
+@NoArgsConstructor
+public class CargoRest implements Serializable {
+
+    private static final long serialVersionUID = 7849555466145997443L;
 
     @Min(0)
     private Long id;
@@ -26,5 +29,6 @@ public class Cargo extends SelfValidating<Cargo> implements Serializable {
     @NotEmpty
     private int pieces;
 
-    private Flight flight;
+    private FlightRest flight;
+
 }

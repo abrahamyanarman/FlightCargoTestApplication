@@ -6,13 +6,14 @@ import lombok.NoArgsConstructor;
 import org.flightcargo.infrastructure.shared.WeightUnit;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 @Entity
 @Table(name = "CARGO")
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class CargoEntity {
+public class CargoEntity implements Serializable {
 
     private static final long serialVersionUID = 4566228265347311657L;
 

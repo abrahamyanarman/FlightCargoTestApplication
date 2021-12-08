@@ -6,11 +6,14 @@ import java.util.Collection;
 import java.util.Date;
 
 public interface FlightRepositoryService {
+
     Collection<Flight> getAllFlights();
 
     void saveFlight(Flight flight);
 
     Flight getFlightByFlightNumberAndDate(int flightNumber, Date date);
+
+    Collection<Flight> getFlightsByIATACode(String iataAirportCode, Date date);
 
     void removeFlight(Flight flight);
 

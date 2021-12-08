@@ -6,7 +6,7 @@ import java.util.Collection;
 
 public interface BaggageRepositoryService {
 
-    Collection<Baggage> getBaggageByFlight(int flightId);
+    Collection<Baggage> getBaggageByFlight(Long flightId);
 
     void addBaggage(Baggage baggage);
 

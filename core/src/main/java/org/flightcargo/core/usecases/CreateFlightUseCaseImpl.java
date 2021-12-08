@@ -6,14 +6,14 @@ import org.flightcargo.core.exception.FlightAlreadyExistsException;
 import org.flightcargo.core.ports.FlightRepositoryService;
 
 @AllArgsConstructor
-public class CreateFlightUseCaseImpl implements CreateFlightUseCase{
+public class CreateFlightUseCaseImpl implements CreateFlightUseCase {
 
     private final FlightRepositoryService flightRepositoryService;
 
     @Override
     public void execute(Flight flight) throws FlightAlreadyExistsException {
 
-        if (flightRepositoryService.doesFlightAlreadyExists(flight)){
+        if (flightRepositoryService.doesFlightAlreadyExists(flight)) {
             throw new FlightAlreadyExistsException();
         }
 
